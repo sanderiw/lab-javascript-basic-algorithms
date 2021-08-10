@@ -29,9 +29,11 @@ for (let i=hacker2.length - 1; i>=0; i--) {
 console.log(reverseOrder); //3.2
 
 //3.3
-if (hacker1 < hacker2) {
+const hacker1Upper = hacker1.toUpperCase();
+const hacker2Upper = hacker2.toUpperCase();
+if (hacker1Upper < hacker2Upper) {
     console.log("The driver's name goes first.");
-  } else if (hacker1 > hacker2) {
+  } else if (hacker1Upper > hacker2Upper) {
     console.log("Yo, the navigator goes first definitely.");
   } else {
     console.log("What?! You both have the same name?");
@@ -57,3 +59,46 @@ const numberOfEts = randomParagraph.split('et').length - 1;
 console.log(numberOfEts);
 
 //Bonus 2
+let phraseToCheck = "Was it a car or a cat I saw?";
+
+function phrasePalindrome(phrase) {
+    phrase = phrase.toUpperCase();
+    let cleanPhrase = "";
+    const specialChar = `!@#$%^&*()_+\-=\[\]{}\`;':"|,.<> /?]+/`;
+    for (let i=0; i<phrase.length; i++) {
+        if (!(specialChar.includes(phrase[i]))) {
+            cleanPhrase += phrase[i];
+        }
+    }
+    return cleanPhrase;
+
+}
+
+function reversePhrasePalindrome(phrase) {
+    phrase = phrase.toUpperCase();
+    let reverseOrder = "";
+    const specialChar = `!@#$%^&*()_+\-=\[\]{}\`;':"|,.<> /?]+/`;
+    for (let i=phrase.length-1; i>=0; i--) {
+        if (!(specialChar.includes(phrase[i]))) {
+            reverseOrder += phrase[i]; 
+        }
+        
+    }
+    return reverseOrder;
+}
+
+function checkIfPalindrome(phrase) {
+    let cleanRegOrder = phrasePalindrome(phrase);
+    let cleanRevOrder = reversePhrasePalindrome(phrase);
+    if (cleanRegOrder === cleanRevOrder) {
+        console.log("It is a palindrome");
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(reversePhrasePalindrome(phraseToCheck));
+console.log(phrasePalindrome(phraseToCheck));
+console.log(checkIfPalindrome(phraseToCheck));
+
