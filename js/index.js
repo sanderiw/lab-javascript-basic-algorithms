@@ -46,4 +46,14 @@ Cras viverra, justo eget consectetur bibendum, justo enim rhoncus ligula, ac lac
 
 Vestibulum at lectus erat. Suspendisse et pellentesque dolor. Vestibulum nec ipsum purus. Nulla condimentum nibh non accumsan viverra. Aenean nec risus vitae lectus elementum viverra. Aliquam iaculis neque tortor, viverra sollicitudin magna semper a. Nunc eget felis libero. Proin in suscipit elit. Nunc tempus sapien et mi dictum, a luctus quam varius. Morbi vitae lacus auctor ex convallis ultricies eget a quam. Fusce congue, dolor a faucibus mollis, sem quam efficitur sapien, a rutrum mi est nec orci. Aenean porttitor cursus nisl, sit amet convallis odio blandit eu. Maecenas nec aliquam urna. Maecenas quis metus ac massa vestibulum condimentum nec id mauris.`;
 
-//console.log(randomParagraph.split(' '));
+const numberOfWords = randomParagraph.split(' ').length;
+
+console.log(numberOfWords);
+
+// count the number of times the Latin word et appears
+
+const numberOfEts = randomParagraph.split('et').length - 1;
+
+console.log(numberOfEts);
+
+//Bonus 2
